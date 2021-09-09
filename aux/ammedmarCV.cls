@@ -12,7 +12,7 @@
 \LoadClass[10pt, onecolumn, oneside]{memoir}
 
 \setlrmarginsandblock{1.5cm}{1.5cm}{*}
-\setulmarginsandblock{1.5cm}{*}{*}
+\setulmarginsandblock{1.2cm}{1.5cm}{*}
 \checkandfixthelayout
 
 \RequirePackage{marvosym}
