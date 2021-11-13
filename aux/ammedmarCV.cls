@@ -11,8 +11,8 @@
 \ProcessOptions\relax
 \LoadClass[10pt, onecolumn, oneside]{memoir}
 
-\setlrmarginsandblock{1.5cm}{1.5cm}{*}
-\setulmarginsandblock{1.2cm}{1.5cm}{*}
+\setlrmarginsandblock{2cm}{2cm}{*}
+\setulmarginsandblock{1.5cm}{1.5cm}{*}
 \checkandfixthelayout
 
 \RequirePackage{marvosym}
@@ -27,7 +27,6 @@
 % bibliography
 \usepackage[sorting=none,
 			backend=biber,
-			style=numeric,
 			backref=true,
 			url=false,
 			doi=false,
@@ -37,10 +36,13 @@
 
 \addbibresource{aux/mypapers.bib}
 
-\setlength\bibitemsep{0.2\itemsep}
+\setlength\bibitemsep{0.5\itemsep}
 \renewbibmacro{in:}{}  % don't display "in:" before the journal name
 \AtEveryBibitem{\clearfield{pages}}  % don't show page numbers
+\DeclareFieldFormat{labelnumberwidth}{#1\adddot}  % numbering bib entries 1. etc
 
+
+%%% titles with hyperreferences in biblioglraphy
 \DeclareFieldFormat{title}{\myhref{\mkbibemph{#1}}}
 \DeclareFieldFormat
 [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
@@ -66,20 +68,6 @@
 	{#1}%
 }
 
-\defbibenvironment{bibliography}
-{\list
-	{}
-	{%
-		\setlength{\labelwidth}{0pt}%
-		\setlength{\leftmargin}{0pt}%
-		\setlength{\labelsep}{0pt}%
-		\addtolength{\leftmargin}{0pt}%
-		\setlength{\itemsep}{\bibitemsep}%
-		\setlength{\parsep}{\bibparsep}}%
-	\renewcommand*{\makelabel}[1]{##1\hss}}
-{\endlist}
-{\item}
-
 %%% Colors
 \def\myColor{DeepSkyBlue4}
 \def\linkColor{DodgerBlue3}
@@ -92,6 +80,7 @@
 	citecolor  = DodgerBlue4,
 	urlcolor   = DodgerBlue4,
 }
+
 %%% Header
 \newcommand{\Header}[3]{
 	\noindent
@@ -138,7 +127,13 @@
 	\begin{samepage}
 		\noindent
 		\large{#1}: \\
-		\normalsize{#2} \par
+		\normalsize{#2}. \par
+	\end{samepage}
+}
+%%% Editorial
+\newcommand{\newEdit}[2]{
+	\begin{samepage}
+		\noindent {#1}, \begin{itshape}#2\end{itshape} \\
 	\end{samepage}
 }
 %%% Teaching
