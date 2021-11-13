@@ -151,7 +151,7 @@
 %%% Talks
 \newcommand{\newTalk}[3]{
 	\begin{samepage}
-		\noindent {#1}, \begin{itshape}#2\end{itshape} \hfill {#3} \\
+		\noindent {#2}. \hfill {#3} \\
 	\end{samepage}
 }
 %%% References
