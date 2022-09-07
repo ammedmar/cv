@@ -1,10 +1,5 @@
-%% ammedmarCV
-%% Copyright 2021 Anibal M. Medina-Mardones
-
 \NeedsTeXFormat{LaTeX2e}
-\def\ClassDate{2021/09/02}
-\def\ClassVersion{1.0}
-\ProvidesClass{ammedmarCV}[\ClassDate ammedmarCV \ClassVersion class written by Anibal M. Medina-Mardones]
+\ProvidesClass{cv}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ExecuteOptions{a4paper}
@@ -33,8 +28,6 @@
 			isbn=false,
 			eprint=false
 			]{biblatex}
-
-\addbibresource{aux/mypapers.bib}
 
 \setlength\bibitemsep{0.5\itemsep}
 \renewbibmacro{in:}{}  % don't display "in:" before the journal name
