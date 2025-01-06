@@ -1,14 +1,23 @@
-\documentclass[a4paper]{aux/ammedmarCV}
+\documentclass[a4paper]{cv}
+\usepackage[sorting=none,
+backend=biber,
+backref=true,
+url=false,
+doi=false,
+isbn=false,
+eprint=false
+]{biblatex}
+\addbibresource{usualpapers.bib}
 
 \begin{document}
 	\Header{Anibal M. Medina-Mardones}
-		{ammedmar@mpim-bonn.mpg.de}
-		{https://www.medina-mardones.com}
+	{anibal.medina.mardones@uwo.ca}
+	{https://www.medina-mardones.com}
 %	\quad \textcolor{DodgerBlue4}{|} \quad
 %	\textcolor{DodgerBlue4}{ORCID: 0000-0002-0905-262X}
-	\input{aux/editorial}
+	\input{sec/papers}
 	\vspace*{-10pt}
-	\input{aux/papers}
+	\input{sec/editorial}
 	\vspace*{-10pt}
-	\input{aux/software}
+	\input{sec/software}
 \end{document}
